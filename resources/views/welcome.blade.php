@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Chalres_Laravel
                 </div>
 
                 <div class="links">
@@ -88,6 +88,15 @@
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
+                </div>
+                
+                <div class="links">
+                    <li calss="links">
+                        <a href="http://blog.test/product">Product</a>
+                    </li>
+                    <li>
+                        <a href="http://blog.test/ponda">Ponda</a>
+                    </li>
                 </div>
             </div>
         </div>

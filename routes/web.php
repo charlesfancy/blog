@@ -15,8 +15,29 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/ponda', function () {
+    return view('ponda');
+});
+
+Route::get('/product', function () {
+    return view('product');
+});
+
+Route::get('/bank', function () {
+    return view('bank');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/chat', 'Chat\ChatController@index')->name('chat');
+
 Route::resource('product', 'ProductController');
+
+Route::resource('ponda', 'PondaController');
+
+Route::resource('bank', 'BankController');
+
+// Route::get('ponda/{ponda}', 'PondaController@SUB');
+
