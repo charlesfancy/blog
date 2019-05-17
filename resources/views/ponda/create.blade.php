@@ -11,7 +11,7 @@
                     <form class="form-horizontal" method="POST" action="{{ route('ponda.store') }}">
                         
                         {{ csrf_field() }}
-
+                        
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Name</label>
 
@@ -30,8 +30,8 @@
                             <label for="text" class="col-md-4 control-label">Introduction</label>
 
                             <div class="col-md-6">
-                                <input id="introduction" type="text" class="form-control" name="introduction"  autofocus>
-
+                                <!-- <input  type="text" class="form-control" name="introduction"  autofocus> -->
+                                <textarea id="introduction" name="introduction" class="form-control" rows="5" ></textarea>
                                 @if ($errors->has('introduction'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('introduction') }}</strong>

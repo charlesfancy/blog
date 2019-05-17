@@ -20,8 +20,8 @@ class CreatePondasTable extends Migration
             $table->integer('score')->nullable();
             $table->timestamps();
         });
-        Schema::create('UID', function (Blueprint $table) {
-            $table->string('UID', 10);
+        Schema::create('uids', function (Blueprint $table) {
+            $table->string('uid', 10);
             $table->timestamps();
         });
     }

@@ -8,3 +8,8 @@ class Ponda extends Model
 {
     //
 }
+
+class Uid extends Model
+{
+    //
+}

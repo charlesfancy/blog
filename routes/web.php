@@ -23,8 +23,8 @@ Route::get('/product', function () {
     return view('product');
 });
 
-Route::get('/bank', function () {
-    return view('bank');
+Route::get('/weather', function () {
+    return view('weather');
 });
 
 Auth::routes();
@@ -37,7 +37,10 @@ Route::resource('product', 'ProductController');
 
 Route::resource('ponda', 'PondaController');
 
-Route::resource('bank', 'BankController');
+Route::resource('weather', 'WeatherController');
 
-// Route::get('ponda/{ponda}', 'PondaController@SUB');
+Route::get('ponda/{ponda}/vote', 'PondaController@vote')->name('ponda.vote');
 
+Route::post('ponda/{ponda}/sub', 'PondaController@sub')->name('ponda.sub');
+
+Route::get('ponda/{ponda}/id_check', 'PondaController@id_check')->name('ponda.id_check');
