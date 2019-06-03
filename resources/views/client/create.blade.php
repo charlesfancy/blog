@@ -5,13 +5,13 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Create ponda</div>
+                <div class="panel-heading">Create Client</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('ponda.store') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('client.store') }}">
                         
                         {{ csrf_field() }}
-
+                        
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Name</label>
 
@@ -26,33 +26,49 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('introduction') ? ' has-error' : '' }}">
-                            <label for="text" class="col-md-4 control-label">Introduction</label>
+                        <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">Address</label>
 
                             <div class="col-md-6">
-                                <input id="introduction" type="text" class="form-control" name="introduction"  autofocus>
+                                <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}" autofocus>
 
-                                @if ($errors->has('introduction'))
+                                @if ($errors->has('address'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('introduction') }}</strong>
+                                        <strong>{{ $errors->first('address') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('score') ? ' has-error' : '' }}">
-                            <label for="score" class="col-md-4 control-label">Score</label>
+                        <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">Phone</label>
 
                             <div class="col-md-6">
-                                <input id="score" type="number" class="form-control" name="score" value="{{ old('score') }}">
+                                <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone') }}" autofocus>
 
-                                @if ($errors->has('score'))
+                                @if ($errors->has('phone'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('score') }}</strong>
+                                        <strong>{{ $errors->first('phone') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
+
+                        <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
+                            <label for="text" class="col-md-4 control-label">Body</label>
+
+                            <div class="col-md-6">
+                                <!-- <input  type="text" class="form-control" name="introduction"  autofocus> -->
+                                <textarea id="body" name="body" class="form-control" rows="5" ></textarea>
+                                @if ($errors->has('body'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('body') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        
 
                         
 

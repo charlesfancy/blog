@@ -93,9 +93,10 @@
                 <div class="links">
                     <li calss="links">
                         <a href="http://blog.test/product">Product</a>
-                    </li>
-                    <li>
                         <a href="http://blog.test/ponda">Ponda</a>
+                        <a href="http://blog.test/weather">Weather</a>
+                        <a href="http://blog.test/client">Client</a>
+                        <a href="http://blog.test/order">Order</a>
                     </li>
                 </div>
             </div>

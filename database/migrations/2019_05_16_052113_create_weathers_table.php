@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBanksTable extends Migration
+class CreateWeathersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class CreateBanksTable extends Migration
      */
     public function up()
     {
-        Schema::create('banks', function (Blueprint $table) {
+        Schema::create('weathers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('summary');
-            $table->integer('income');
-            $table->integer('iexpenditure');
-            $table->text('remarks');
-            $table->integer('total');
-            $table->tiestamps();
+            $table->timestamps();
         });
     }
 
@@ -31,6 +26,6 @@ class CreateBanksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('banks');
+        Schema::dropIfExists('weathers');
     }
 }

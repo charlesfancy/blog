@@ -4,9 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Ponda extends Model
+class weather extends Model
 {
     //
 }
-
-

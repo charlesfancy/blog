@@ -6,6 +6,9 @@ use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Mail\UserVerification;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -62,10 +65,36 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'verification_code' => bin2hex(str_random(15)),
             'password' => bcrypt($data['password']),
         ]);
+        
+
+        $mailable = new UserVerification($user);
+
+        Mail::to($user->email)->send($mailable);
+
+        return $user;
+    }
+
+    protected function registered(Request $request, $user)
+    {
+        $this->guard()->logout();
+
+        return redirect('/login')->with('status', 'Check your email to verify');
+    }
+
+    public function verifyEmail(Request $request)
+    {
+        $code = $request->code;
+
+        $user = User::where('verification_code', $code)->first();
+        $user->verified = 1;
+        $user->save();
+
+        return view('home');
     }
 }

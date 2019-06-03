@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Bank;
+use App\order;
 use Illuminate\Http\Request;
 
-class BankController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class BankController extends Controller
      */
     public function index()
     {
-
-        return view('bank.index', compact('bank'));
+        //
     }
 
     /**
@@ -42,10 +41,10 @@ class BankController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Bank  $bank
+     * @param  \App\order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(Bank $bank)
+    public function show(order $order)
     {
         //
     }
@@ -53,10 +52,10 @@ class BankController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Bank  $bank
+     * @param  \App\order  $order
      * @return \Illuminate\Http\Response
      */
-    public function edit(Bank $bank)
+    public function edit(order $order)
     {
         //
     }
@@ -65,10 +64,10 @@ class BankController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Bank  $bank
+     * @param  \App\order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Bank $bank)
+    public function update(Request $request, order $order)
     {
         //
     }
@@ -76,10 +75,10 @@ class BankController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Bank  $bank
+     * @param  \App\order  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Bank $bank)
+    public function destroy(order $order)
     {
         //
     }
